@@ -15,6 +15,14 @@ build/
 # Session handover (work-in-progress, private)
 handover/
 
+# X API tokens & fetched bookmarks (contain third-party content)
+.x_tokens.json
+bookmarks/
+
+# ねーさんの分析メモ（第三者ツイート引用含むのでprivate）
+# curated版は notes/ 配下に手動で書き写すこと
+analysis/
+
 # OS
 .DS_Store
 Thumbs.db
