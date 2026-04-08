@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 540" font-family="sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f0f0"/>
+      <stop offset="100%" stop-color="#e8e8e8"/>
+    </linearGradient>
+    <radialGradient id="cheek2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffb3c8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#ffb3c8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="540" fill="url(#bg2)" rx="16"/>
+
+  <!-- Hair back layer -->
+  <ellipse cx="200" cy="220" rx="100" ry="120" fill="#1a1a1a"/>
+
+  <!-- Face -->
+  <ellipse cx="200" cy="245" rx="80" ry="92" fill="#fce5cf"/>
+
+  <!-- Hair bangs (front, covering brow) -->
+  <path d="M 122 195 Q 145 145 200 152 Q 255 145 278 195 Q 268 220 240 212 Q 222 188 200 200 Q 178 188 160 212 Q 132 220 122 195 Z" fill="#1a1a1a"/>
+
+  <!-- Side hair tufts (short, framing face) -->
+  <path d="M 117 215 Q 105 280 113 320 Q 125 310 128 260 Q 128 230 117 215 Z" fill="#1a1a1a"/>
+  <path d="M 283 215 Q 295 280 287 320 Q 275 310 272 260 Q 272 230 283 215 Z" fill="#1a1a1a"/>
+
+  <!-- Hair highlights -->
+  <path d="M 145 175 Q 165 165 185 175" stroke="#3a3a3a" stroke-width="2" fill="none"/>
+  <path d="M 215 175 Q 235 165 255 175" stroke="#3a3a3a" stroke-width="2" fill="none"/>
+
+  <!-- Closed laughing eyes (^_^ style) -->
+  <path d="M 152 252 Q 170 232 188 252" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 212 252 Q 230 232 248 252" stroke="#1a1a1a" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Eyelashes hint -->
+  <line x1="155" y1="248" x2="153" y2="244" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="185" y1="248" x2="187" y2="244" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="215" y1="248" x2="213" y2="244" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="245" y1="248" x2="247" y2="244" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Cheek blush -->
+  <circle cx="148" cy="280" r="14" fill="url(#cheek2)"/>
+  <circle cx="252" cy="280" r="14" fill="url(#cheek2)"/>
+
+  <!-- Open laughing mouth -->
+  <ellipse cx="200" cy="298" rx="22" ry="13" fill="#5a2a2a"/>
+  <path d="M 178 298 Q 200 290 222 298" fill="white"/>
+  <path d="M 178 298 Q 200 314 222 298" stroke="#1a1a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Neck -->
+  <rect x="185" y="335" width="30" height="25" fill="#fce5cf"/>
+
+  <!-- Hoodie main body -->
+  <path d="M 95 380 Q 100 360 130 358 L 270 358 Q 300 360 305 380 L 325 540 L 75 540 Z" fill="#c8c8c8"/>
+
+  <!-- Hood at back -->
+  <path d="M 130 358 Q 150 335 200 332 Q 250 335 270 358" fill="#b5b5b5"/>
+
+  <!-- Hood inner -->
+  <path d="M 165 365 Q 200 348 235 365" stroke="#a0a0a0" stroke-width="2" fill="none"/>
+
+  <!-- Drawstrings -->
+  <line x1="178" y1="370" x2="176" y2="425" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+  <line x1="222" y1="370" x2="224" y2="425" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="176" cy="428" r="3" fill="#666"/>
+  <circle cx="224" cy="428" r="3" fill="#666"/>
+
+  <!-- SCIENCE LAB UNIVERSITY logo on hoodie -->
+  <circle cx="200" cy="465" r="14" fill="none" stroke="#3b5998" stroke-width="2"/>
+  <ellipse cx="200" cy="465" rx="14" ry="5" fill="none" stroke="#3b5998" stroke-width="1.5"/>
+  <ellipse cx="200" cy="465" rx="14" ry="5" fill="none" stroke="#3b5998" stroke-width="1.5" transform="rotate(60 200 465)"/>
+  <ellipse cx="200" cy="465" rx="14" ry="5" fill="none" stroke="#3b5998" stroke-width="1.5" transform="rotate(-60 200 465)"/>
+  <circle cx="200" cy="465" r="2" fill="#3b5998"/>
+  <text x="200" y="495" font-size="9" text-anchor="middle" fill="#3b5998" font-weight="bold">SCIENCE LAB</text>
+  <text x="200" y="506" font-size="7" text-anchor="middle" fill="#3b5998">UNIVERSITY</text>
+
+  <!-- Caption -->
+  <text x="200" y="528" font-size="11" text-anchor="middle" fill="#666">ねーさん v2 (参考画像反映 / 笑顔 ver)</text>
+</svg>
