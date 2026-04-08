@@ -45,6 +45,7 @@ BOOKMARKS_URL_TMPL = "https://api.x.com/2/users/{uid}/bookmarks"
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TOKEN_FILE = REPO_ROOT / ".x_tokens.json"
 OUT_DIR = REPO_ROOT / "bookmarks"
+SEEN_FILE = OUT_DIR / ".seen_ids.json"
 
 
 def _basic_auth() -> str:
@@ -219,6 +220,24 @@ def fetch_bookmarks(access_token: str) -> tuple[list, dict, dict]:
     return tweets, users, media
 
 
+def load_seen_ids() -> set[str]:
+    if not SEEN_FILE.exists():
+        return set()
+    try:
+        data = json.loads(SEEN_FILE.read_text(encoding="utf-8"))
+        return set(data.get("ids", []))
+    except Exception as e:
+        print(f"  warn: .seen_ids.json 読込失敗 ({e}). 全件を新着扱いにする")
+        return set()
+
+
+def save_seen_ids(ids: set[str]) -> None:
+    SEEN_FILE.write_text(
+        json.dumps({"ids": sorted(ids), "updated_at": time.strftime("%Y-%m-%d %H:%M:%S")}, indent=2),
+        encoding="utf-8",
+    )
+
+
 def render_markdown(tweets: list, users: dict, media: dict) -> str:
     lines = ["# X Bookmarks", ""]
     lines.append(f"取得日時: {time.strftime('%Y-%m-%d %H:%M:%S')}")
@@ -277,8 +296,15 @@ def main() -> int:
 
     OUT_DIR.mkdir(exist_ok=True)
 
+    seen_ids = load_seen_ids()
+    print(f"前回までの既見: {len(seen_ids)} 件")
+
     tokens = get_tokens()
     tweets, users, media = fetch_bookmarks(tokens["access_token"])
+
+    current_ids = {t["id"] for t in tweets}
+    new_ids = current_ids - seen_ids
+    new_tweets = [t for t in tweets if t["id"] in new_ids]
 
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     raw_path = OUT_DIR / f"{timestamp}_raw.json"
@@ -292,10 +318,16 @@ def main() -> int:
     md_path.write_text(md, encoding="utf-8")
     (OUT_DIR / "latest.md").write_text(md, encoding="utf-8")
 
-    print(f"\n✓ {len(tweets)} 件取得完了")
+    new_md = render_markdown(new_tweets, users, media)
+    (OUT_DIR / "new.md").write_text(new_md, encoding="utf-8")
+
+    save_seen_ids(current_ids)
+
+    print(f"\n✓ 取得完了: 全{len(tweets)}件 / 新着{len(new_tweets)}件")
     print(f"  - {md_path.relative_to(REPO_ROOT)}")
     print(f"  - {raw_path.relative_to(REPO_ROOT)}")
-    print(f"  - bookmarks/latest.md")
+    print(f"  - bookmarks/latest.md (全件)")
+    print(f"  - bookmarks/new.md (新着のみ)")
     print("\nClaude Code で `/read-bookmarks` 叩くとねーさんが読んでくれるで")
     return 0
 
