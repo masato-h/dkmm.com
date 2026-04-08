@@ -321,9 +321,9 @@ def main() -> int:
     new_md = render_markdown(new_tweets, users, media)
     (OUT_DIR / "new.md").write_text(new_md, encoding="utf-8")
 
-    save_seen_ids(current_ids)
+    save_seen_ids(current_ids | seen_ids)
 
-    print(f"\n✓ 取得完了: 全{len(tweets)}件 / 新着{len(new_tweets)}件")
+    print(f"\n[OK] 取得完了: 全{len(tweets)}件 / 新着{len(new_tweets)}件")
     print(f"  - {md_path.relative_to(REPO_ROOT)}")
     print(f"  - {raw_path.relative_to(REPO_ROOT)}")
     print(f"  - bookmarks/latest.md (全件)")
