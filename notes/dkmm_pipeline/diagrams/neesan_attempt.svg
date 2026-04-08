@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" font-family="sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffeef5"/>
+      <stop offset="100%" stop-color="#e8f4ff"/>
+    </linearGradient>
+    <radialGradient id="cheek" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffb3c8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffb3c8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="520" fill="url(#bg)" rx="16"/>
+
+  <!-- Hair back -->
+  <path d="M 95 250 Q 75 360 110 430 L 290 430 Q 325 360 305 250 Q 325 145 200 125 Q 75 145 95 250 Z" fill="#4a3422"/>
+
+  <!-- Face -->
+  <ellipse cx="200" cy="265" rx="86" ry="98" fill="#fce5cf"/>
+
+  <!-- Hair bangs -->
+  <path d="M 118 205 Q 150 155 200 165 Q 250 155 282 205 Q 268 235 240 220 Q 220 198 200 215 Q 180 198 160 220 Q 132 235 118 205 Z" fill="#4a3422"/>
+
+  <!-- Side hair tufts -->
+  <path d="M 113 235 Q 96 295 113 360 Q 130 350 130 285 Q 130 245 113 235 Z" fill="#4a3422"/>
+  <path d="M 287 235 Q 304 295 287 360 Q 270 350 270 285 Q 270 245 287 235 Z" fill="#4a3422"/>
+
+  <!-- Hair highlights -->
+  <path d="M 140 175 Q 160 165 180 178" stroke="#6b4a30" stroke-width="2" fill="none"/>
+  <path d="M 220 178 Q 240 165 260 175" stroke="#6b4a30" stroke-width="2" fill="none"/>
+
+  <!-- Eyes -->
+  <ellipse cx="168" cy="270" rx="15" ry="19" fill="white" stroke="#3d2817" stroke-width="2"/>
+  <ellipse cx="232" cy="270" rx="15" ry="19" fill="white" stroke="#3d2817" stroke-width="2"/>
+  <circle cx="168" cy="275" r="12" fill="#6b4423"/>
+  <circle cx="232" cy="275" r="12" fill="#6b4423"/>
+  <circle cx="172" cy="270" r="4.5" fill="white"/>
+  <circle cx="236" cy="270" r="4.5" fill="white"/>
+  <circle cx="164" cy="280" r="2" fill="white"/>
+  <circle cx="228" cy="280" r="2" fill="white"/>
+
+  <!-- Eyebrows (friendly arch) -->
+  <path d="M 152 245 Q 168 236 184 245" stroke="#3d2817" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 216 245 Q 232 236 248 245" stroke="#3d2817" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Cheeks -->
+  <circle cx="143" cy="300" r="15" fill="url(#cheek)"/>
+  <circle cx="257" cy="300" r="15" fill="url(#cheek)"/>
+
+  <!-- Mouth (friendly smile, slightly mischievous) -->
+  <path d="M 178 312 Q 200 328 222 312" stroke="#c44569" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 184 314 Q 200 322 216 314" stroke="#e88aa5" stroke-width="2" fill="none"/>
+
+  <!-- Lab coat collar -->
+  <path d="M 130 390 L 170 365 L 200 380 L 230 365 L 270 390 L 295 520 L 105 520 Z" fill="#fafafa" stroke="#bbb" stroke-width="2"/>
+  <path d="M 170 365 L 200 415 L 230 365" stroke="#bbb" stroke-width="2" fill="none"/>
+
+  <!-- Pen in pocket (lab coat detail) -->
+  <rect x="225" y="445" width="6" height="30" fill="#e63946" rx="2"/>
+  <rect x="223" y="442" width="10" height="6" fill="#aaa"/>
+
+  <!-- Caption -->
+  <text x="200" y="500" font-size="13" text-anchor="middle" fill="#555">ねーさん (SVG 試作 v1)</text>
+</svg>
