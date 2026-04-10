@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # dkmm_pipeline
 
 dkmm.com 自体の運用パイプラインに関するスレッド集。

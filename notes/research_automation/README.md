@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # research_automation
 
 研究プロセスの自動化・半自動化に関するスレッド集。理想論から失敗談まで両面集める。
